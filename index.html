@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>War RPG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            background-color: #1a1a1a;
+        }
+        .font-teko {
+            font-family: 'Teko', sans-serif;
+        }
+        .bg-pattern {
+            background-image: url('https://www.transparenttextures.com/patterns/dark-denim-3.png');
+            background-color: #2d3748;
+        }
+        .card {
+            background-color: rgba(45, 55, 72, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nation-flag {
+            width: 50px;
+            height: 30px;
+            object-fit: cover;
+            border: 1px solid #4a5568;
+        }
+        .btn-link {
+            transition: all 0.3s ease;
+            border: 2px solid #a0aec0;
+        }
+        .btn-link:hover {
+            background-color: #a0aec0;
+            color: #1a202c;
+            transform: translateY(-2px);
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: #4a5568;
+            color: #e2e8f0;
+            border: none;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .copy-btn:hover {
+            background-color: #718096;
+        }
+    </style>
+</head>
+<body class="text-gray-300">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <!-- Header -->
+        <header class="bg-pattern text-white text-center p-8 md:p-12 rounded-lg shadow-2xl border-2 border-gray-700">
+            <h1 class="font-teko text-6xl md:text-8xl font-bold tracking-wider uppercase">WAR RPG</h1>
+            <p class="text-xl md:text-2xl text-gray-400 mt-2">O Mundo em Chamas</p>
+        </header>
+
+        <!-- Painel de Status Global -->
+        <section class="my-8">
+            <h2 class="font-teko text-4xl text-center mb-6 uppercase text-gray-400">Painel Geopolítico</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <!-- Card Nação Exemplo -->
+                <div class="card p-4 rounded-lg text-center">
+                    <img src="https://flagcdn.com/w80/de.png" alt="Bandeira da Alemanha" class="mx-auto mb-2 nation-flag">
+                    <h3 class="font-bold text-lg">Alemanha</h3>
+                    <p class="text-sm text-green-400">Estabilidade: 85%</p>
+                    <p class="text-sm text-blue-400">Tec. Aeronáutica: 48</p>
+                </div>
+                <!-- Card Nação Exemplo -->
+                <div class="card p-4 rounded-lg text-center">
+                    <img src="https://flagcdn.com/w80/gb.png" alt="Bandeira do Reino Unido" class="mx-auto mb-2 nation-flag">
+                    <h3 class="font-bold text-lg">Reino Unido</h3>
+                    <p class="text-sm text-yellow-400">Estabilidade: 72%</p>
+                    <p class="text-sm text-blue-400">Tec. Naval: 55</p>
+                </div>
+                <!-- Card Nação Exemplo -->
+                <div class="card p-4 rounded-lg text-center">
+                    <img src="https://flagcdn.com/w80/us.png" alt="Bandeira dos EUA" class="mx-auto mb-2 nation-flag">
+                    <h3 class="font-bold text-lg">EUA</h3>
+                    <p class="text-sm text-green-400">Estabilidade: 91%</p>
+                    <p class="text-sm text-blue-400">Tec. Civil: 52</p>
+                </div>
+                <!-- Card Nação Exemplo -->
+                <div class="card p-4 rounded-lg text-center">
+                    <img src="https://flagcdn.com/w80/jp.png" alt="Bandeira do Japão" class="mx-auto mb-2 nation-flag">
+                    <h3 class="font-bold text-lg">Japão</h3>
+                    <p class="text-sm text-red-400">Estabilidade: 65%</p>
+                    <p class="text-sm text-blue-400">Tec. Naval: 51</p>
+                </div>
+                <!-- Card Nação Exemplo -->
+                <div class="card p-4 rounded-lg text-center">
+                    <img src="https://flagcdn.com/w80/su.png" alt="Bandeira da União Soviética" class="mx-auto mb-2 nation-flag">
+                    <h3 class="font-bold text-lg">União Soviética</h3>
+                    <p class="text-sm text-yellow-400">Estabilidade: 75%</p>
+                    <p class="text-sm text-blue-400">Tec. Veículos: 45</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Arsenal da Nação -->
+        <section class="my-12">
+            <h2 class="font-teko text-4xl text-center mb-6 uppercase text-gray-400">Arsenal da Nação</h2>
+            <p class="text-center max-w-3xl mx-auto mb-8 text-gray-400">A vitória é forjada nas fábricas e nos campos de treinamento. Utilize as ferramentas de design para desenvolver o equipamento que levará sua nação à glória.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Designer de Aeronaves -->
+                <div class="card rounded-lg p-6 text-center flex flex-col items-center justify-between shadow-lg">
+                    <div class="text-6xl mb-4">✈️</div>
+                    <h3 class="font-teko text-3xl mb-2 uppercase">Força Aérea</h3>
+                    <p class="mb-6 text-gray-400">Projete caças, bombardeiros e aviões de apoio para dominar os céus e garantir a superioridade aérea.</p>
+                    <a href="#" class="btn-link w-full py-2 rounded font-bold uppercase tracking-wider">Projetar Aeronave</a>
+                </div>
+                <!-- Designer de Blindados -->
+                <div class="card rounded-lg p-6 text-center flex flex-col items-center justify-between shadow-lg">
+                    <div class="text-6xl mb-4">🚛</div>
+                    <h3 class="font-teko text-3xl mb-2 uppercase">Forças Terrestres</h3>
+                    <p class="mb-6 text-gray-400">Desenvolva tanques, artilharia e veículos de apoio para suas divisões. A espinha dorsal do seu exército.</p>
+                    <a href="#" class="btn-link w-full py-2 rounded font-bold uppercase tracking-wider">Projetar Blindado</a>
+                </div>
+                <!-- Designer Naval -->
+                <div class="card rounded-lg p-6 text-center flex flex-col items-center justify-between shadow-lg">
+                    <div class="text-6xl mb-4">🛳️</div>
+                    <h3 class="font-teko text-3xl mb-2 uppercase">Marinha de Guerra</h3>
+                    <p class="mb-6 text-gray-400">Construa de contratorpedeiros a couraçados. Projete seu poder através dos oceanos e controle as rotas comerciais.</p>
+                    <a href="#" class="btn-link w-full py-2 rounded font-bold uppercase tracking-wider">Projetar Frota</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mecânicas do Jogo -->
+        <section class="my-12 card p-8 rounded-lg">
+            <h2 class="font-teko text-4xl text-center mb-8 uppercase text-gray-400">Mecânicas Principais</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="font-teko text-2xl mb-4 border-b-2 border-gray-600 pb-2">Estrutura do Turno</h3>
+                    <ul class="space-y-3">
+                        <li><strong class="text-yellow-400">10 Ações Internas:</strong> Desenvolvimento econômico, social, tecnológico e militar dentro de suas fronteiras.</li>
+                        <li><strong class="text-blue-400">3 Ações Externas:</strong> Diplomacia, comércio, alianças e tratados com outras nações.</li>
+                        <li><strong class="text-red-400">3 Ações Secretas:</strong> Espionagem, sabotagem e operações clandestinas para ganhar vantagem.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-teko text-2xl mb-4 border-b-2 border-gray-600 pb-2">Atributos da Nação</h3>
+                    <ul class="space-y-3">
+                        <li><strong class="text-green-400">PIB & Orçamento:</strong> A força da sua economia e os recursos disponíveis para investir.</li>
+                        <li><strong class="text-blue-400">Tecnologia:</strong> O avanço em áreas civis e militares que destrava novas capacidades.</li>
+                        <li><strong class="text-yellow-400">Estabilidade & Centralização:</strong> A coesão interna e a eficiência do seu governo.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Guia do Jogo -->
+        <section class="my-12">
+             <h2 class="font-teko text-4xl text-center mb-8 uppercase text-gray-400">Como Jogar</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card p-6 rounded-lg">
+                    <h3 class="font-teko text-2xl mb-3">Para Jogadores</h3>
+                    <p class="text-gray-400">Seu objetivo é guiar sua nação através da história. Defina suas próprias metas, seja a dominação mundial, a prosperidade econômica ou a sobrevivência. Use suas ações para moldar o destino do seu povo, forjar alianças e preparar-se para os conflitos inevitáveis.</p>
+                </div>
+                 <div class="card p-6 rounded-lg">
+                    <h3 class="font-teko text-2xl mb-3">Para Narradores</h3>
+                    <p class="text-gray-400">Sua função é ser o árbitro do mundo. Avalie as ações dos jogadores com imparcialidade, calcule os resultados com base nas regras e na coerência, e crie eventos globais que desafiem os jogadores e mantenham o jogo dinâmico e equilibrado. Você é o guardião da história.</p>
+                </div>
+             </div>
+        </section>
+
+        <!-- Formato do Turno -->
+        <section class="my-12">
+            <h2 class="font-teko text-4xl text-center mb-6 uppercase text-gray-400">Formato de Submissão de Turno</h2>
+            <div class="bg-gray-900 rounded-lg p-4 relative text-sm">
+                <button onclick="copyTurnTemplate()" class="copy-btn">Copiar</button>
+                <pre id="turn-template"><code class="language-text">
+🇩🇪🌲-Nome do País-🌲🇩🇪
+🇩🇪 Lema ou Slogan Nacional 🇩🇪
+📚Tecnologia = XX
+🪓Exército = XX
+🚛Veículos = XX
+✈️Aeronáutica = XX
+🛳️Marinha = XX
+
+=== AÇÕES INTERNAS ===
+-----------------------------------------------------
+Título da Ação 1 🏭💰
+(1) Narrativa detalhada...
+XXM [Orçamento]
+[]
+-----------------------------------------------------
+(Repetir para 10 ações)
+
+=== AÇÕES EXTERNAS ===
+-----------------------------------------------------
+Título da Ação Externa 1 🤝🌍
+(1) Narrativa detalhada...
+XXM [Orçamento]
+[]
+-----------------------------------------------------
+(Repetir para 3 ações)
+
+__________________________________
+Gastos totais: XXM
+                </code></pre>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function copyTurnTemplate() {
+            const templateText = document.getElementById('turn-template').innerText;
+            const textarea = document.createElement('textarea');
+            textarea.value = templateText;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('Modelo de turno copiado para a área de transferência!');
+        }
+    </script>
+
+</body>
+</html>
